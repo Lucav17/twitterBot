@@ -34,7 +34,10 @@ Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bom
             });
 
             tweet.save(function(err, tweet) {
-                if (err) { throw err; }
+                if (err) {
+                    console.log(err);
+                    throw err;
+                }
             });
         }
     });
