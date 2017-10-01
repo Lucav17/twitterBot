@@ -22,21 +22,18 @@ mongoose.connect(dbConfig.DATABASE, function(err) {
 Twitter.stream('statuses/filter', { track: 'bath bomb, lush, soap bar, hex bomb, soap, bath, bubble bath', language: "en" }, function(stream) {
     stream.on('data', function(event) {
         var sentimentScore = sentimentAnalysis.analyzeText(event.text);
-        let tweet = new Tweet({
-            userName: "@" + event.user.screen_name,
-            message: event.text,
-            score: sentimentScore.score,
-            comparative: sentimentScore.comparative
-        });
-        tweet.save(function(err, tweet) {
-            if (err) { throw err; }
+        // let tweet = new Tweet({
+        //     userName: "@" + event.user.screen_name,
+        //     message: event.text,
+        //     score: sentimentScore.score,
+        //     comparative: sentimentScore.comparative
+        // });
+        // tweet.save(function(err, tweet) {
+        //     if (err) { throw err; }
 
-            console.log("Saved!");
-        });
-
-        console.log(event.text);
-
-        console.log(tweet._id);
+        //     console.log("Saved!");
+        // });
+        /*
         setTimeout(function() {
             Twitter.post('statuses/update', { status: 'Hello! ' + event.user.screen_name + " Use SUDZ10 for 10% off a our site here! http://bit.ly/sudzly" }, function(error, tweeted, response) {
                 if (error) {
@@ -45,11 +42,7 @@ Twitter.stream('statuses/filter', { track: 'bath bomb, lush, soap bar, hex bomb,
                 }
                 console.log("Tweeted!");
             });
-
-
-        }, 1000)
-
-
+        }, 60000) */
     });
 
     stream.on('error', function(error) {
