@@ -47,7 +47,7 @@ Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bom
     });
 });
 
-app.listen(8080, function(err) {
+app.listen(process.env.PORT || 8080, function(err) {
     if (err) throw err;
     console.log("server is now running");
 });
