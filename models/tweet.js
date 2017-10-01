@@ -4,6 +4,7 @@ const mongoose = require('mongoose'),
 const TweetSchema = new Schema({
     userName: { type: String },
     message: { type: String },
+    messageID: { type: String },
     score: { type: Number },
     comparative: { type: Number },
     hasClicked: { type: Boolean, default: false }
