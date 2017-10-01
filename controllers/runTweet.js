@@ -12,7 +12,6 @@ setInterval(function() {
             Twitter.post('statuses/retweet/', { id: tweet.messageID }, function(error, response) {
                 if (error) {
                     console.log(error);
-                    throw error;
                 }
                 tweet.remove();
             });
@@ -20,7 +19,6 @@ setInterval(function() {
             Twitter.post('statuses/update', { status: 'Hello! ' + tweet.userName + ", check out our bath bomb and soap bar subscriptions and use SUDZ10 for 10% off your order! http://bit.ly/sudzly" }, function(error, tweeted, response) {
                 if (error) {
                     console.log(error);
-                    throw error;
                 }
                 tweet.remove();
             });
