@@ -8,7 +8,7 @@ const Twitter = new twitter(appConfig);
 setInterval(function() {
     Tweet.findOne({}, function(err, tweet) {
         if (err) { throw err }
-        if (tweet.score > 3) {
+        if (tweet.score > 3 && !tweet.retweet) {
             Twitter.post('statuses/retweet/', { id: tweet.messageID }, function(error, response) {
                 if (error) {
                     console.log(error);

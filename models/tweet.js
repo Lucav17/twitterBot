@@ -6,6 +6,7 @@ const TweetSchema = new Schema({
     message: { type: String },
     messageID: { type: String },
     score: { type: Number },
+    retweet: { type: Boolean },
     comparative: { type: Number },
     hasClicked: { type: Boolean, default: false }
 }, {

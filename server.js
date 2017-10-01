@@ -25,11 +25,16 @@ Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bom
     stream.on('data', function(event) {
         if (event.user.screen_name != "sudzlysoaps") {
             var sentimentScore = sentimentAnalysis.analyzeText(event.text);
+            var retweeted = false;
+            if (event.retweeted_status) {
+                retweeted = true;
+            }
             let tweet = new Tweet({
                 userName: "@" + event.user.screen_name,
                 message: event.text,
                 messageID: event.id_str,
                 score: sentimentScore.score,
+                retweet: retweeted,
                 comparative: sentimentScore.comparative
             });
 
