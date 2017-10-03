@@ -1,6 +1,6 @@
 # remove config files
 
-config/
+config/*
 
 # remove node modules 
 
