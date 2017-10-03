@@ -21,7 +21,7 @@ mongoose.connect(dbConfig.DATABASE, function(err) {
 
 
 // You can also get the stream in a callback if you prefer. 
-Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bomb, body scrub, soap bar, soap, bubble bath, bath', language: "en" }, function(stream) {
+Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bomb, body scrub, soap bar, soap, bubble bath, hex bomb, bath scrub, organic', language: "en" }, function(stream) {
     stream.on('data', function(event) {
         if (event.user.screen_name != "sudzlysoaps") {
             var sentimentScore = sentimentAnalysis.analyzeText(event.text);

@@ -43,9 +43,9 @@ function quoteTweet(number, link) {
 function randomizer() {
     var rand = Math.random();
     if (rand < .5) {
-        return 45000 - Math.floor(Math.random() * 10000);
+        return 70000 - Math.floor(Math.random() * 20000);
     }
-    return 45000 + Math.floor(Math.random() * 10000);
+    return 70000 + Math.floor(Math.random() * 20000);
 
 }
 
