@@ -40,6 +40,15 @@ function quoteTweet(number, link) {
     return array[number];
 }
 
+function randomizer() {
+    var rand = Math.random();
+    if (rand < .5) {
+        return 45000 - Math.floor(Math.random() * 10000);
+    }
+    return 45000 + Math.floor(Math.random() * 10000);
+
+}
+
 
 setInterval(function() {
     var rand = Math.floor(Math.random() * 20);
@@ -93,4 +102,4 @@ setInterval(function() {
         }
     });
 
-}, 40000);
+}, randomizer());
