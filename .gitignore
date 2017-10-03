@@ -4,4 +4,4 @@ config/
 
 # remove node modules 
 
-node_modules/
+extension/node_modules/*
