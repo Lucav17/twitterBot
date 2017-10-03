@@ -35,12 +35,13 @@ Twitter.stream('statuses/filter', { track: 'bath bomb, bath bombs, lush bath bom
                 messageID: event.id_str,
                 score: sentimentScore.score,
                 retweet: retweeted,
+                link: "http://twitter.com/" + event.user.screen_name + "/status/" + event.id_str,
                 comparative: sentimentScore.comparative
             });
 
             tweet.save(function(err, tweet) {
                 if (err) {
-                    throw err;
+                    console.log(err);
                 }
             });
         }
