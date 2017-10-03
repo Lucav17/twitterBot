@@ -60,7 +60,6 @@ setInterval(function() {
                     console.log(error);
                 }
                 console.log("retweet");
-                tweet.remove();
             });
         } else if (rand >= 6 && rand < 11) {
             if (rand < 9) {
@@ -69,7 +68,6 @@ setInterval(function() {
                         console.log(error);
                     }
                     console.log("did it");
-                    tweet.remove();
                 });
             } else {
                 Twitter.post('statuses/update', { status: quoteTweet(Math.floor(Math.random() * 12)) + tweet.link }, function(error, tweeted, response) {
@@ -77,7 +75,6 @@ setInterval(function() {
                         console.log(error);
                     }
                     console.log("did it")
-                    tweet.remove();
                 });
             }
         } else if (rand >= 11 && rand < 16) {
@@ -88,7 +85,6 @@ setInterval(function() {
                 } else {
                     console.log('FAVORITED... Success!!!');
                 }
-                tweet.remove();
             });
         } else {
             Twitter.post('friendships/create', { screen_name: tweet.userName }, function(err, response) {
@@ -97,9 +93,9 @@ setInterval(function() {
                 } else {
                     console.log(tweet.userName, ': **FOLLOWED**');
                 }
-                tweet.remove();
             });
         }
+        tweet.remove();
     });
 
 }, randomizer());
