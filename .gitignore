@@ -1,7 +1,3 @@
-# remove config files
-
-config/*
-
 # remove node modules 
 
 node_modules/*
